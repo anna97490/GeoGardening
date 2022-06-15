@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_14_124216) do
+ActiveRecord::Schema.define(version: 2022_06_15_122209) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2022_06_14_124216) do
     t.string "scientific_name"
     t.string "family"
     t.string "image_url"
-    t.string "type"
+    t.string "plant_type"
     t.string "maturity_size"
     t.string "sun_exposure"
     t.string "soil_type"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2022_06_14_124216) do
     t.text "light"
     t.text "soil"
     t.text "water"
-    t.text "fertilizing"
+    t.text "fertilizer"
     t.boolean "pot"
     t.boolean "open_soil"
     t.datetime "created_at", precision: 6, null: false
