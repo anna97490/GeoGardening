@@ -1,4 +1,15 @@
-<% @plants.each do |plant| %>
-  <img src="#{plant.image_url}" alt="">
-  <%= plant.name %>
-<% end %>
+<div class="row justify-content-center row-cols-auto pt-4 mb-5">
+  <% @plants.each do |plant| %>
+    <div class="col p-3">
+      <%= link_to plant_path(plant), {class: 'text-deco'} do %>
+        <div class="card" style="width: 18rem;">
+          <%= image_tag plant.image_url, alt: plant.name, class: "plant-image" %>
+          <div class="card-body">
+            <h5 class="card-title"><strong><%= plant.name %></strong></h5>
+            <p class="card-text"><i><%= plant.scientific_name %></i></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
