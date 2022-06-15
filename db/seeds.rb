@@ -226,6 +226,7 @@ plants.each do |attributes|
 end
 puts "Finished seeding"
 
+User.create(email: 'lewagon@gmail.com', password: 'lewagon', user_location: 'Nice', nickname: 'Fab')
 #    {
 #     name: "",
 #     scientific_name: "",
