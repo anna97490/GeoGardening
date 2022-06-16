@@ -1,5 +1,9 @@
 Plant.destroy_all
 
+List.destroy_all
+
+User.destroy_all
+
 puts "Starting the seeding"
 
 plants = [
@@ -226,7 +230,12 @@ plants.each do |attributes|
 end
 puts "Finished seeding"
 
-User.create(email: 'lewagon@gmail.com', password: 'lewagon', user_location: 'Nice', nickname: 'Fab')
+user_1 = User.create(email: 'lewagon@gmail.com', password: 'lewagon', user_location: 'Nice', nickname: 'Fab')
+
+List.create(name: 'Liste Nice', location: 'Nice', user_id: user_1.id)
+
+List.create(name: 'Liste Paris', location: 'Paris', user_id: user_1.id)
+
 #    {
 #     name: "",
 #     scientific_name: "",
