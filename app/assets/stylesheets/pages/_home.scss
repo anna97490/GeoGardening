@@ -1,31 +1,4 @@
 // Specific CSS for your home-page
-.container-fluid {
-  width: 95% !important;
-}
-.navbar {
-  background-color: #bacba9 !important;
-}
-.navbar-shadow {
-  box-shadow: 0px 0px 23px #707c72;
-}
-#logo-navbar {
-  width: 100px;
-}
-.nav-link {
-  background-color: #EDFEDA !important;
-  box-shadow: 0px 0px 6px #707c72;
-  border: none;
-  border-radius: 22px;
-}
-.navbar-nav {
-  display: flex;
-  justify-content: space-between;
-  width: 235px;
-}
-.navbar-expand-lg
-.navbar-nav {
-
-}
-.dropdown-menu {
-  width: 30px !important;
+.body-home {
+  padding: 8%;
 }
