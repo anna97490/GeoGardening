@@ -1,4 +1,43 @@
 // Specific CSS for your home-page
 .body-home {
-  padding: 8%;
+  padding: 8% 12%;
+}
+
+.sp-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  color: $color-navbar;
+  font-size: 90px;
+  margin-top: 8%;
+  width: 100%;
+}
+
+.map-marker-home {
+  margin-bottom: 3%;
+}
+
+.map-marker-home i:hover {
+  color:$color-dark-green;
+}
+
+.icons-home {
+  width: 35%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-weight: bold;
+  margin: 0 3%;
+}
+
+.p-home {
+  color: $color-dark-green;
+  font-size: 18px;
+  text-align: center;
 }
