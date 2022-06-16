@@ -6,8 +6,18 @@ body {
   background-position: center;
   height: calc(120vh - 86px);
   background-repeat: no-repeat;
+  height: 100%;
 }
 
 a {
   text-decoration: none !important;
+}
+
+p, span {
+  font-family: 'Maven Pro', sans-serif !important;
+}
+
+h1, h2, h3 {
+  font-family: 'DM Serif Display', serif;
+  color: #07390C;
 }
