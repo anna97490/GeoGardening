@@ -1,6 +1,6 @@
 <div class="body-home">
   <div class="sp-container">
-		<h1 class="title-home">AVEC GEOGARDENING...</h1>
+		<h1 class="title-home">Avec GeoGardening...</h1>
 	  <div class="sp-content">
       <div class="container-icons">
         <div class="icons-home">
@@ -17,8 +17,11 @@
         </div>
       </div>
 	  </div>
-    <%= link_to plants_path do %>
-      <button class="nav-link"type="button">plants</button>
-    <% end %>
+    <div class="container-btn-to-search">
+      <%= link_to plants_path do %>
+        <button class="button-green btn-home"type="button">Recherchez maintenant</button>
+      <% end %>
+    </div>
   </div>
 </div>
+<%= render 'shared/footer' %>
