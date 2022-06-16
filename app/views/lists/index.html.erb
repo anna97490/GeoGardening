@@ -1,7 +1,11 @@
+<button class="button-green"><%="Create a list" %></button>
 <div class="list-card">
-  <i class="fas fa-light fa-seedling"></i>
+  <span class="list-symbol"><i class="fas fa-light fa-seedling"></i></span>
   <div class="list-card-infos">
-    <h2>List name</h2>
+    <% @trips.each do |trip| %>
+
+    <h2>list.name</h2>
     <p>Localisation</p>
   </div>
+  <%= link_to "Delete" %>
 </div>

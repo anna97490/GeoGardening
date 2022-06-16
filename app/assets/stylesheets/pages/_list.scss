@@ -8,6 +8,8 @@
   justify-content: flex-start;
   width: 50%;
   border-radius: 20px;
+  margin: auto;
+  margin-top: 20px;
 }
 
 .list-card i {
@@ -33,4 +35,8 @@
 .list-card-infos {
   padding: 16px;
   width: 90%;
+}
+
+.a {
+  color: green;
 }
