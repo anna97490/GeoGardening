@@ -1,0 +1,19 @@
+.card {
+  width: 18rem;
+  height: 19rem;
+  border-radius: 10%;
+  color: black;
+  border-style: hidden;
+  box-shadow: 0px 0px 6px #707C72;
+  transition: transform 0.2s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+.text-deco {
+  text-decoration: none;
+}
+.plant-image {
+  border-top-left-radius: 27px;
+  border-top-right-radius: 27px;
+}
