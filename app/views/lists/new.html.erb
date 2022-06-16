@@ -1,0 +1,7 @@
+<div class="container">
+  <%= simple_form_for [ @list ] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :location, placeholder: current_user.user_location %>
+    <%= f.submit "Confirmer", class: "button-green" %>
+  <% end %>
+</div>
