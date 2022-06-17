@@ -9,6 +9,7 @@ class PlantsController < ApplicationController
     elsif params[:name].blank?
       @plants = Plant.where("plant_type LIKE ?", "%#{params[:plant_type]}%")
     elsif params[:plant_type].blank?
+      raise
       @plants = Plant.where("name LIKE ?", "%#{params[:name]}%")
     else
       @plants = Plant.where("name LIKE ? AND plant_type LIKE ?", "%#{params[:name]}%", "%#{params[:plant_type]}%")
