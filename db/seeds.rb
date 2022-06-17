@@ -1,9 +1,8 @@
 require 'json'
 # require 'open-uri'
+List.destroy_all
 
 Plant.destroy_all
-
-List.destroy_all
 
 User.destroy_all
 
