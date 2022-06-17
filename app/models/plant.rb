@@ -1,6 +1,6 @@
 class Plant < ApplicationRecord
   has_many :lists, through: :plant_lists
-  has_many :plant_lists
+  has_many :plant_lists, dependent: :destroy
 
   def self.create_from_collection(plants)
     # plants.each do |plant_hash|
