@@ -2,6 +2,12 @@ require 'nokogiri'
 require 'open-uri'
 require 'pry'
 require 'json'
+
+# There are 2 possibilities withing this file:
+# 1) Seeding directly from scraping (you need to create a method within plant model for that and call it from seed)
+# together with scraper = Scraper.new
+# 2) Create json file upon scraping and then use it from seed ( we'll use that in our app)
+
 class Scraper
   def scrape_plant_urls
     puts "scrape_plant_urls"
