@@ -3,18 +3,16 @@ class PlantsController < ApplicationController
 
   def index
     @all_plants = Plant.new
-    if params[:plant]
-      if params[:plant][:name].blank? && params[:plant][:plant_type].blank?
-        @plants = Plant.all
-      elsif params[:plant][:name].blank?
-        @plants = Plant.where("plant_type LIKE ?", "%#{params[:plant][:plant_type]}%")
-      elsif params[:plant][:plant_type].blank?
-        @plants = Plant.where("name LIKE ?", "%#{params[:plant][:name]}%")
-      else
-        @plants = Plant.where("name LIKE ? AND plant_type LIKE ?", "%#{params[:plant][:name]}%", "%#{params[:plant][:plant_type]}%")
-      end
+    if params_form[:name].blank? && params_form[:plant_type].blank?
+      # Temporary change in order to not show all 1650 plants in index
+      @plants = Plant.take(10)
+    elsif params_form[:name].blank?
+      @plants = Plant.where("plant_type LIKE ?", "%#{params_form[:plant_type]}%")
+    elsif params_form[:plant_type].blank?
+      @plants = Plant.where("name LIKE ?", "%#{params_form[:name]}%")
+
     else
-      @plants = Plant.all
+       @plants = Plant.where("name LIKE ? AND plant_type LIKE ?", "%#{params_form[:name]}%", "%#{params_form[:plant_type]}%")
     end
   end
 
