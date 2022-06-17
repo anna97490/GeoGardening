@@ -4,7 +4,8 @@ class PlantsController < ApplicationController
   def index
     @all_plants = Plant.new
     if params_form[:name].blank? && params_form[:plant_type].blank?
-      @plants = Plant.all
+      # Temporary change in order to not show all 1650 plants in index
+      @plants = Plant.take(10)
     elsif params_form[:name].blank?
       @plants = Plant.where("plant_type LIKE ?", "%#{params_form[:plant_type]}%")
     elsif params_form[:plant_type].blank?
