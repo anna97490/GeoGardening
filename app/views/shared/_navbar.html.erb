@@ -16,11 +16,13 @@
               <% end %>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link nav-link-button dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Mon Profil
-              </a>
+              <a class="nav-link nav-link-button dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mon Profil</a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Déconnexion</a></li>
+                <% if current_user != nil %>
+                  <li><%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
+                <% else %>
+                  <li><%= link_to "Connexion", new_user_session_path, class: "dropdown-item" %></li>
+                <% end %>
               </ul>
             </li>
           </ul>

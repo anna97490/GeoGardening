@@ -7,6 +7,6 @@ class PlantListsController < ApplicationController
   def destroy
     @plant_list = PlantList.find(params[:id])
     @plant_list.destroy
-    redirect_to plant_lists_path
+    redirect_back(fallback_location: list_path)
   end
 end
