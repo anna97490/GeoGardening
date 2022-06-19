@@ -26,7 +26,24 @@
     <p class="txte-show">En terre:<%= @plant.open_soil %></p>
     <p class="txte-show">Température:<%= @plant.temperature_humidity %></p>
   </div>
-    <% link_to  do %>
-      <button class="button-green btn-show"type="button">Add to list</button>
+  <%# if @lists.exists?%>
+  <%# else %>
+  <%# link_to do %>
+    <%# <button class="button-green btn-show"type="button">Add to list</button> %>
+  <%# end %>
+
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      Ajouter à une liste
+    </button>
+    <% if current_user.lists.exists? %>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <% current_user.lists.each do |list| %>
+          <li><%= link_to list.name, plant_plant_lists_path(@plant.id, list_id: list.id, plant_id: @plant.id), method: :post, class: "dropdown-item" %></li>
+        <% end %>
+      </ul>
+    <% else %>
+
     <% end %>
+  </div>
 </div>

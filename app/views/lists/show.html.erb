@@ -1,1 +1,10 @@
 <h1><%= "#{@list.name} - #{@list.location}" %></h1>
+<ul>
+  <% @list.plant_lists.each do |plant_list| %>
+    <li>
+      <% plant = @list.plants.where(id: plant_list.plant_id).first %>
+      <%= plant.name %>
+      <%= link_to "Supprimer", plant_list_path(plant_list), method: :delete %>
+    </li>
+  <% end %>
+</ul>
