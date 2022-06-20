@@ -1,0 +1,80 @@
+.back-icon {
+  font-size: 23px;
+  & i {
+    -webkit-text-stroke-width: 1px !important;
+    -webkit-text-stroke-color: #36583a33 !important;
+    &:hover {
+      -webkit-text-stroke-width: 1px !important;
+      -webkit-text-stroke-color: #19221a33 !important;
+    }
+  }
+  & a {
+    color: $color-navbar !important;
+    &:hover {
+      color: #d0e9b7 !important;
+    }
+  }
+}
+
+.display-show {
+  display: flex;
+  padding: 0 10%;
+}
+
+.dropdown-show {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-add-to-list {
+  background-color: #b4d790;
+  margin-right: 10%;
+  padding: 9px;
+  border-radius: 40px;
+  box-shadow: 1px 6px 9px #cfd2ce;
+  transition: transform 0.5s;
+  &:hover {
+    transform: scale(1.05);
+    background-color: #a1c37f;
+    box-shadow: 0px 8px 15px #b0b0b0;
+    font-weight: bold;
+  }
+}
+
+.container-img-all-descriptions {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2%;
+  padding-left: 2%;
+  width: 65vw;
+  border-left: 1px solid $color-dark-green;
+}
+
+.container-title-show {
+  padding: 0 8%;
+}
+
+.container-subtitle-show {
+  margin-right: 1%;
+  .subtitle-show {
+    font-style: italic;
+  }
+}
+
+.title-show {
+  font-size: 25px;
+}
+
+.btn-show {
+  width: 96px !important;
+  padding: 10px;
+}
+
+.img-show {
+  width: 45%;
+  border-radius: 30px;
+}
+
+.txte-show {
+  margin-bottom: 3%;
+}

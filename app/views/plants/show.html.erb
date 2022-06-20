@@ -3,37 +3,8 @@
     <i class="fas fa-arrow-circle-left"></i>
   <% end %>
 </p>
-<div class="container-show">
-  <div class="display-show">
-    <p class="txte-show"><%= @plant.image_url %></p>
-    <p class="text-show"><strong>Nom:</strong><%= @plant.name %></p>
-    <p class="txte-show"><strong>Nom scientifique:</strong><%= @plant.scientific_name %></p>
-    <p class="txte-show"><strong>Description:</strong><%= @plant.description %></p>
-    <p class="txte-show"><strong>Type:</strong><%= @plant.plant_type %></p>
-    <p class="txte-show"><strong>Taille à mâturité :</strong><%= @plant.maturity_size %></p>
-    <p class="txte-show"><strong>Exposition:</strong><%= @plant.sun_exposure %></p>
-    <p class="txte-show"><strong>Type de sol:</strong><%= @plant.soil_type %></p>
-    <p class="txte-show"><strong>Ph du sol:<strong><%= @plant.soil_ph %></p>
-    <p class="txte-show"><strong>Floraison:</strong><%= @plant.bloom_time %></p>
-    <p class="txte-show"><strong>Granulométrie:</strong><%= @plant.hardiness_zone %></p>
-    <p class="txte-show"><strong>Origine:</strong><%= @plant.native_area %></p>
-    <p class="txte-show">Soin:<%= @plant.care %></p>
-    <p class="txte-show">Luminosité:<%= @plant.light %></p>
-    <p class="txte-show">Soil:<%= @plant.soil %></p>
-    <p class="txte-show">Arrosage:<%= @plant.water %></p>
-    <p class="txte-show">Fertilisation:<%= @plant.fertilizer %></p>
-    <p class="txte-show">En pot:<%= @plant.pot %></p>
-    <p class="txte-show">En terre:<%= @plant.open_soil %></p>
-    <p class="txte-show">Température:<%= @plant.temperature_humidity %></p>
-  </div>
-  <%# if @lists.exists?%>
-  <%# else %>
-  <%# link_to do %>
-    <%# <button class="button-green btn-show"type="button">Add to list</button> %>
-  <%# end %>
-
-  <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+<div class="dropdown dropdown-show">
+    <button class="btn dropdown-toggle btn-add-to-list" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
       Ajouter à une liste
     </button>
     <% if current_user.lists.exists? %>
@@ -46,4 +17,41 @@
 
     <% end %>
   </div>
+<div class="container-show">
+  <div class="container-title-show">
+    <p class="title-show"><strong><%= @plant.name.upcase %></strong></p>
+  </div>
+  <div class="display-show">
+    <div class="container-subtitle-show">
+      <p class="subtitle-show"><%= @plant.scientific_name %></p>
+    </div>
+    <div class="container-img-all-descriptions">
+      <div class="container-img-show txte-show">
+        <%= image_tag @plant.image_url, class: "img-show" %>
+      </div>
+      <p class="txte-show"><strong>Type:</strong><%= @plant.plant_type %></p>
+      <p class="txte-show"><strong>Taille à mâturité :</strong><%= @plant.maturity_size %></p>
+      <p class="txte-show"><strong>Exposition:</strong><%= @plant.sun_exposure %></p>
+      <p class="txte-show"><strong>Type de sol:</strong><%= @plant.soil_type %></p>
+      <p class="txte-show"><strong>Ph du sol:<strong><%= @plant.soil_ph %></p>
+      <p class="txte-show"><strong>Floraison:</strong><%= @plant.bloom_time %></p>
+      <p class="txte-show"><strong>Granulométrie:</strong><%= @plant.hardiness_zone %></p>
+      <p class="txte-show"><strong>Origine:</strong><%= @plant.native_area %></p>
+      <p class="txte-show">Soin:<%= @plant.care %></p>
+      <p class="txte-show">Luminosité:<%= @plant.light %></p>
+      <p class="txte-show">Soil:<%= @plant.soil %></p>
+      <p class="txte-show">Arrosage:<%= @plant.water %></p>
+      <p class="txte-show">Fertilisation:<%= @plant.fertilizer %></p>
+      <p class="txte-show">En pot:<%= @plant.pot %></p>
+      <p class="txte-show">En terre:<%= @plant.open_soil %></p>
+      <p class="txte-show">Température:<%= @plant.temperature_humidity %></p>
+      <p class="txte-show"><%= @plant.description %></p>
+    </div>
+  </div>
+  <%# if @lists.exists?%>
+  <%# else %>
+  <%# link_to do %>
+    <%# <button class="button-green btn-show"type="button">Add to list</button> %>
+  <%# end %>
 </div>
+<%= render 'shared/footer' %>
