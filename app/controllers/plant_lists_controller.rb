@@ -1,7 +1,7 @@
 class PlantListsController < ApplicationController
   def create
     @plant_list = PlantList.new(list_id: params[:list_id], plant_id: params[:plant_id]) if params[:plant_id].present?
-    redirect_to plants_path, notice: "Congratulations! You have added a plant to the list. " if @plant_list.save
+    redirect_to plants_path, notice: "Félicitation ! Vous avez ajouté une plante à votre liste. " if @plant_list.save
   end
 
   def destroy
