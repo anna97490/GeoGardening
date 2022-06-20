@@ -1,3 +1,8 @@
+<p class="back-icon m-3">
+  <%= link_to plants_path do %>
+    <i class="fas fa-arrow-circle-left"></i>
+  <% end %>
+</p>
 <button class="button-green button-green-lists"><%= link_to "Créer une liste", new_list_path, method: :get %></button>
 <% @lists.each do |list| %>
   <div class="list-card">

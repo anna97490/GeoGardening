@@ -1,8 +1,11 @@
 <p class="back-icon m-3">
-  <%= link_to lists_path do %>
+  <%= link_to :back do %>
     <i class="fas fa-arrow-circle-left"></i>
   <% end %>
 </p>
+
+<button class="button-green button-green-lists"><%= link_to "Ajouter une plante", plants_path %></button>
+
 <h1><%= "#{@list.name} - #{@list.location}" %></h1>
 <ul>
   <% @list.plant_lists.each do |plant_list| %>
