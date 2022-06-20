@@ -39,9 +39,11 @@
 }
 
 .navbar-nav {
-  display: flex;
-  justify-content: space-between;
-  width: 17vw;
+  width: 22vw;
+  padding: 0 1%;
+  & li {
+    margin-right: 5%;
+  }
 }
 
 .dropdown-menu {

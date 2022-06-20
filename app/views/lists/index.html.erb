@@ -11,6 +11,6 @@
       <h2><%= link_to list.name, list_path(list.id) %></h2>
       <p><%= list.location %></p>
     </div>
-    <%= link_to "Supprimer", list_path(list), method: :delete %>
+    <span class="del-link"><%= link_to "Supprimer", list_path(list), method: :delete %></span>
   </div>
 <% end %>
