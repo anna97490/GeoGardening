@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .body-home {
-  padding: 8% 12%;
+  padding: 6% 12%;
 }
 
 .sp-content {
@@ -22,11 +22,11 @@
 .map-marker-home {
   margin-bottom: 3%;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #07390c7d;
-}
-
-.map-marker-home i:hover {
-  color:$color-dark-green;
+  -webkit-text-stroke-color: #36583a7d;
+  transition: transform 0.5s;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .icons-home {
@@ -36,6 +36,15 @@
   justify-content: center;
   font-weight: bold;
   margin: 0 3%;
+  &:nth-of-type(1) {
+    animation: home .8s .8s both;
+  }
+  &:nth-of-type(2) {
+    animation: home 1s 1s both;
+  }
+  &:nth-of-type(3) {
+    animation: home 1.2s 1.2s both;
+  }
 }
 
 .p-home {

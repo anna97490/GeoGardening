@@ -1,21 +1,11 @@
-.navbar-lewagon {
-  justify-content: space-between;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
 .container-fluid {
   width: 95% !important;
 }
 
 .navbar {
-  background-color: $color-navbar !important;
+  background-color: #e4ebdd !important;
+  // position: fixed;
+  // z-index: 1000;
 }
 
 .navbar-shadow {
@@ -24,19 +14,34 @@
 
 #logo-navbar {
   width: 100px;
+  transition: transform 0.5s;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .nav-link-button {
+  padding: 7px 10px !important;
+  color: $color-dark-green !important;
   background-color: #EDFEDA !important;
   box-shadow: 0px 0px 10px #707c72bd;;
   border: none;
   border-radius: 22px;
+  transition: transform 0.5s;
+  & i {
+    margin-right: 6px;
+  }
+  &:hover {
+    transform: scale(1.05);
+    opacity: .9;
+    font-weight: bold;
+  }
 }
 
 .navbar-nav {
   display: flex;
   justify-content: space-between;
-  width: 235px;
+  width: 17vw;
 }
 
 .dropdown-menu {
