@@ -1,3 +1,8 @@
+<p class="back-icon m-3">
+  <%= link_to lists_path do %>
+    <i class="fas fa-arrow-circle-left"></i>
+  <% end %>
+</p>
 <h1><%= "#{@list.name} - #{@list.location}" %></h1>
 <ul>
   <% @list.plant_lists.each do |plant_list| %>
