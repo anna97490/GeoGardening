@@ -1,15 +1,20 @@
-.navbar {
+.container-navbar {
+  position: relative;
   background-color: #e4ebdd !important;
-  // position: fixed;
-  // z-index: 1000;
+  z-index: 1000;
+  padding: 1%;
+  box-shadow: 0px 0px 20px #707c729c;
 }
 
 .navbar-green {
-  width: 20vw !important;
+  display: flex;
+  justify-content: space-between;
 }
 
-.navbar-shadow {
-  box-shadow: 0px 0px 9px #707c72;
+.navbar-expand-lg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #logo-navbar {
@@ -40,7 +45,7 @@
 
 .navbar-nav {
   width: 22vw;
-  padding: 0 1%;
+  padding-left: 15%;
   & li {
     margin-right: 5%;
   }
