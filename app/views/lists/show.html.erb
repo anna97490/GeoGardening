@@ -1,29 +1,29 @@
-<p class="back-icon m-3">
+<p class="back-icon mt-3 ms-3">
   <%= link_to :back do %>
     <i class="fas fa-arrow-circle-left"></i>
   <% end %>
 </p>
 
-<button class="button-green button-green-lists"><%= link_to "Ajouter une plante", plants_path %></button>
+<button class="button-green button-green-lists mb-4"><%= link_to "Ajouter une plante", plants_path %></button>
+<h1 class="mx-5 px-5"><%= "#{@list.name} - #{@list.location}" %></h1>
 
-<h1><%= "#{@list.name} - #{@list.location}" %></h1>
-<div class="container-fluid">
-  <div class="row justify-content-center row-cols-auto mt-5">
+<div class="container-fluid m-5">
+  <div class="row row-cols-auto mt-5">
     <% @list.plant_lists.each do |plant_list| %>
       <div class="col p-3">
         <%= link_to plant_path(plant_list), {class: 'text-deco'} do %>
-          <div class="card card-list">
+          <div class="card card-index">
             <% plant = @list.plants.where(id: plant_list.plant_id).first %>
             <%= image_tag plant.image_url, alt: plant.name, class: "plant-image" %>
             <div class="card-body">
               <h5 class="card-title"><strong><%= plant.name %></strong></h5>
               <p class="card-text"><i><%= plant.scientific_name %></i></p>
             </div>
-            <%= link_to "Supprimer", plant_list_path(plant_list), method: :delete %>
           </div>
         <% end %>
       </div>
     <% end %>
   </div>
 </div>
+
 <%= render 'shared/footer' %>
