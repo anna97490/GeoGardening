@@ -1,3 +1,7 @@
+.container-fluid {
+  margin-bottom: 20px;
+}
+
 .container-search {
   width: 88% !important;
 }
@@ -75,6 +79,9 @@
 }
 
 .scroll-up-button{
+  position: fixed;
+  bottom: 80px;
+  right: 0px;
   color: #768f5d98;
   font-size: 40px;
   float: right;
