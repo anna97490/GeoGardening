@@ -21,20 +21,22 @@
                   <p><%= image_tag @plant.image_url, class: "img-show" %></p>
                 </div>
                 <div class="col m-auto">
-                  <div class="dropdown dropdown-show">
-                    <button class="btn dropdown-toggle btn-add-to-list" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                      Ajouter à une liste
-                    </button>
-                    <% if current_user.lists.exists? %>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <% current_user.lists.each do |list| %>
-                          <li><%= link_to list.name, plant_plant_lists_path(@plant.id, list_id: list.id, plant_id: @plant.id), method: :post, class: "dropdown-item" %></li>
-                        <% end %>
-                      </ul>
-                    <% else %>
-                      <%= flash[:notice] = "Vous ne possédez aucune liste" %>
-                    <% end %>
-                  </div>
+                  <% if current_user != nil %>
+                    <div class="dropdown dropdown-show">
+                      <button class="btn dropdown-toggle btn-add-to-list" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Ajouter à une liste
+                      </button>
+                      <% if current_user.lists.exists? %>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                          <% current_user.lists.each do |list| %>
+                            <li><%= link_to list.name, plant_plant_lists_path(@plant.id, list_id: list.id, plant_id: @plant.id), method: :post, class: "dropdown-item" %></li>
+                          <% end %>
+                        </ul>
+                      <% else %>
+                        <%= flash[:notice] = "Vous ne possédez aucune liste" %>
+                      <% end %>
+                    </div>
+                  <% end %>
                 </div>
               </div>
               <div class="row">
