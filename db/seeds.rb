@@ -5,7 +5,7 @@ List.destroy_all
 Plant.destroy_all
 
 User.destroy_all
-Locations.destroy_all
+Location.destroy_all
 
 puts "Starting the seeding"
 puts "Creating plants"
