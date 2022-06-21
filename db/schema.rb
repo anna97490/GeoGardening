@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_20_153211) do
+ActiveRecord::Schema.define(version: 2022_06_21_112949) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2022_06_20_153211) do
 
   create_table "locations", force: :cascade do |t|
     t.string "name"
-    t.integer "zone"
+    t.integer "zone", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 2022_06_20_153211) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["list_id"], name: "index_plant_lists_on_list_id"
     t.index ["plant_id"], name: "index_plant_lists_on_plant_id"
+  end
+
+  create_table "plant_locations", force: :cascade do |t|
+    t.bigint "plant_id", null: false
+    t.bigint "location_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["location_id"], name: "index_plant_locations_on_location_id"
+    t.index ["plant_id"], name: "index_plant_locations_on_plant_id"
   end
 
   create_table "plants", force: :cascade do |t|
@@ -64,6 +73,7 @@ ActiveRecord::Schema.define(version: 2022_06_20_153211) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
     t.text "temperature_humidity"
+    t.integer "zone", default: [], array: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -83,4 +93,6 @@ ActiveRecord::Schema.define(version: 2022_06_20_153211) do
   add_foreign_key "lists", "users"
   add_foreign_key "plant_lists", "lists"
   add_foreign_key "plant_lists", "plants"
+  add_foreign_key "plant_locations", "locations"
+  add_foreign_key "plant_locations", "plants"
 end

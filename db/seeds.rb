@@ -1,10 +1,10 @@
 require 'json'
 
-List.destroy_all
+# List.destroy_all
 
-Plant.destroy_all
+# Plant.destroy_all
 
-User.destroy_all
+# User.destroy_all
 # Locations.destroy_all
 
 puts "Starting the seeding"
