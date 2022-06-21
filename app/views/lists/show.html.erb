@@ -3,10 +3,8 @@
     <i class="fas fa-arrow-circle-left"></i>
   <% end %>
 </p>
-
 <button class="button-green button-green-lists mb-4"><%= link_to "Ajouter une plante", plants_path %></button>
 <h1 class="mx-5 px-5"><%= "#{@list.name} - #{@list.location}" %></h1>
-
 <div class="container-fluid m-5">
   <div class="row row-cols-auto mt-5">
     <% @list.plant_lists.each do |plant_list| %>
@@ -25,5 +23,3 @@
     <% end %>
   </div>
 </div>
-
-<%= render 'shared/footer' %>

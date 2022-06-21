@@ -13,7 +13,11 @@
           <h2><%= link_to list.name, list_path(list.id) %></h2>
           <p><%= list.location %></p>
         </div>
-        <span class="del-link"><%= link_to "Supprimer", list_path(list), method: :delete %></span>
+        <span class="del-link justify-content-end">
+          <%= link_to list_path(list), method: :delete do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+        </span>
       </div>
     <% end %>
   </div>
