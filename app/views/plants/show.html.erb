@@ -69,7 +69,18 @@
                 <div class="col"><p><strong>Taille à mâturité:</strong> <%= @plant.maturity_size %>cm</p></div>
                 <div class="col"><p><strong>Zone de rusticité:</strong> <%= @plant.hardiness_zone %></p></div>
               </div>
-              <p><%= @plant.description %></p>
+              <br>
+              <% count = 0 %>
+              <% paragraphe = "" %>
+              <% @plant.description.each_char do |c| %>
+                <% paragraphe << c %>
+                <% count += 1 if c == '.' %>
+                <% if count == 3 %>
+                  <% count = 0 %>
+                  <p><%= paragraphe %></p>
+                  <% paragraphe = "" %>
+                <% end %>
+              <% end %>
             </div>
           </div>
         </div>
