@@ -26,15 +26,16 @@
 }
 
 .nav-link-button {
-  padding: 7px 10px !important;
+  padding: auto;
   color: $color-dark-green !important;
   background-color: #EDFEDA !important;
   box-shadow: 0px 0px 10px #707c72bd;;
   border: none;
   border-radius: 22px;
-  transition: transform 0.5s;
+  transition: transform 0.2s;
   & i {
     margin-right: 6px;
+    color: $color-dark-green;
   }
   &:hover {
     transform: scale(1.05);
