@@ -42,16 +42,34 @@
   margin-right: 1%;
 }
 
-.tab-pane form {
-  background-color: #bacba900 !important;
-  & input {
-    border-radius: 10px;
-    border: none;
-    height: 30px;
-    margin-right: 1%;
+.tab-pane {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.557);
+
+  form {
+    background-color: #bacba900 !important;
+    & input {
+      border-radius: 10px;
+      border: none;
+      height: 30px;
+      margin: 10px;
+      &::placeholder {
+        color: black;
+      }
+    }
   }
 }
 
-.card-index {
-  height: 18rem !important;
+.card-text {
+  font-size: 15px;
+}
+
+.nav-link {
+  border: none;
+}
+
+.search-btn {
+  box-shadow: 1px 1px 3px lightgrey;
 }

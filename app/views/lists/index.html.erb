@@ -4,14 +4,15 @@
   <% end %>
 </p>
 <button class="button-green button-green-lists"><%= link_to "Créer une liste", new_list_path, method: :get %></button>
-<% @lists.each do |list| %>
-  <div class="list-card">
-    <i class="fas fa-light fa-seedling"></i>
-    <div class="list-card-infos">
-      <h2><%= link_to list.name, list_path(list.id) %></h2>
-      <p><%= list.location %></p>
+<div class="container-index-lists">
+  <% @lists.each do |list| %>
+    <div class="list-card">
+      <i class="fas fa-light fa-seedling"></i>
+      <div class="list-card-infos">
+        <h2><%= link_to list.name, list_path(list.id) %></h2>
+        <p><%= list.location %></p>
+      </div>
+      <span class="del-link"><%= link_to "Supprimer", list_path(list), method: :delete %></span>
     </div>
-    <span class="del-link"><%= link_to "Supprimer", list_path(list), method: :delete %></span>
-  </div>
-<% end %>
-<%= render 'shared/footer' %>
+  <% end %>
+</div>

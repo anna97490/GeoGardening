@@ -37,7 +37,7 @@ class PlantsController < ApplicationController
         @plants = Plant.where("name ILIKE ? AND plant_type ILIKE ?", "%#{params[:plant][:name]}%", "%#{params[:plant][:plant_type]}%").order('name ASC')
       end
     else
-      @plants = Plant.take(10)
+      @plants = Plant.take(50)
     end
   end
 
