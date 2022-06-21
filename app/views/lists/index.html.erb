@@ -1,23 +1,20 @@
-<p class="back-icon m-3">
-  <%= link_to plants_path do %>
-    <i class="fas fa-arrow-circle-left"></i>
-  <% end %>
-</p>
-<button class="button-green button-green-lists"><%= link_to "Créer un jardin", new_list_path, method: :get %></button>
-<div class="container-index-lists">
-  <% @lists.each do |list| %>
-    <div class="list-card">
-      <i class="fas fa-light fa-seedling"></i>
-      <div class="list-card-infos">
-        <h2><%= link_to list.name, list_path(list.id) %></h2>
-        <p><%= list.location %></p>
+<div class="body-lists-index">
+  <p class="back-icon m-3">
+    <%= link_to plants_path do %>
+      <i class="fas fa-arrow-circle-left"></i>
+    <% end %>
+  </p>
+  <button class="button-green button-green-lists"><%= link_to "Créer une liste", new_list_path, method: :get %></button>
+  <div class="container-index-list">
+    <% @lists.each do |list| %>
+      <div class="list-card">
+        <i class="fas fa-light fa-seedling"></i>
+        <div class="list-card-infos">
+          <h2><%= link_to list.name, list_path(list.id) %></h2>
+          <p><%= list.location %></p>
+        </div>
+        <span class="del-link"><%= link_to "Supprimer", list_path(list), method: :delete %></span>
       </div>
-      <span class="del-link justify-content-end">
-        <%= link_to list_path(list), method: :delete do %>
-          <i class="fas fa-trash"></i>
-        <% end %>
-      </span>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
-<%= render 'shared/footer' %>

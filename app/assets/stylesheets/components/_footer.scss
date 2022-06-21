@@ -1,6 +1,12 @@
 .footer-all {
   background-color: $color-footer !important;
-  margin-top: 2%;
+  max-width: 100% !important;
+}
+
+.container-footer {
+  display: flex;
+  justify-content: center;
+  padding: 2% 0 1% 0;
 }
 
 .container-brands {
@@ -15,6 +21,7 @@
     color: $color-dark-green;
   }
   & h3 {
+    margin: 0 0 3% 0;
     width: 100%;
   }
 }
@@ -30,5 +37,15 @@
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: $color-dark-green;
     }
+  }
+}
+
+.col-lg-3 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  & p {
+    margin: 0;
+    font-size: 14px;
   }
 }
