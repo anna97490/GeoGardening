@@ -15,7 +15,13 @@
 </div>
 <div class="container-fluid">
   <div class="row justify-content-center row-cols-auto mt-5">
-  <%= "Aucune plante ne correspond à ces critères 😟" if @plants.blank?%>
+    <% if @plants.blank?%>
+      <%= "Aucune plante ne correspond à ces critères 😟"  %>
+    <% else %>
+      <a href="#navbar-example2">
+        <i class="fas fa-arrow-circle-up scroll-up-button"></i>
+      </a>
+    <% end %>
     <% @plants.each do |plant| %>
       <div class="col p-3">
         <%= link_to plant_path(plant), {class: 'text-deco'} do %>

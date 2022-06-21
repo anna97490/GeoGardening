@@ -77,3 +77,18 @@
 .search-btn {
   box-shadow: 1px 1px 3px lightgrey;
 }
+
+.scroll-up-button{
+  position: fixed;
+  bottom: 80px;
+  right: 0px;
+  color: #768f5d98;
+  font-size: 40px;
+  float: right;
+  margin-right: 30px;
+  margin-top: -50px;
+  &:hover {
+    color: #7e98646e;
+    cursor: pointer;
+  }
+}

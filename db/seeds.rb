@@ -15,11 +15,11 @@ plants = JSON.parse(ser_plants)
 
 Plant.create_from_collection(plants)
 
-user_1 = User.create(email: 'lewagon@gmail.com', password: 'lewagon', user_location: 'Nice', nickname: 'Fab')
+user = User.create(email: 'lewagon@gmail.com', password: 'lewagon', user_location: 'Nice', nickname: 'Fab')
 
-List.create(name: 'Liste Nice', location: 'Nice', user_id: user_1.id)
+List.create(name: 'Maison de campagne', location: 'Nice', user_id: user.id)
 
-List.create(name: 'Liste Paris', location: 'Paris', user_id: user_1.id)
+List.create(name: 'Mon appartement', location: 'Paris', user_id: user.id)
 
 puts "Finished seeding"
 

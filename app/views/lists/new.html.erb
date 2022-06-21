@@ -1,7 +1,12 @@
+<p class="back-icon m-3">
+  <%= link_to :back do %>
+    <i class="fas fa-arrow-circle-left"></i>
+  <% end %>
+</p>
 <div class="container">
   <%= simple_form_for [ @list ] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :location, placeholder: current_user.user_location %>
+    <%= f.input :name, label: 'Nom de la liste' %>
+    <%= f.input :location, label: 'Localisation', placeholder: current_user.user_location %>
     <%= f.submit "Confirmer", class: "button-green" %>
   <% end %>
 </div>
