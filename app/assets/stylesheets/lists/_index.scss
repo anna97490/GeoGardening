@@ -35,15 +35,23 @@
   }
 }
 
-.list-card i {
-  width: 10%;
-  object-fit: cover;
-  text-align: center;
-  color: $color-navbar;
-  font-size: 30px;
-  color: #BACBA9;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #36583a7d;
+.list-card {
+  .fa-light {
+    width: 10%;
+    object-fit: cover;
+    text-align: center;
+    font-size: 30px;
+    color: #BACBA9;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #36583a7d;
+  }
+  .fa-trash {
+    font-size: 20px;
+    color: #525c48;
+    &:hover {
+      color: #262b22;
+    }
+  }
 }
 
 .list-card h2 {
