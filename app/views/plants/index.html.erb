@@ -1,22 +1,13 @@
 <div class="container-fluid justify-content-center container-search">
   <nav class="nav-index mt-5">
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <button class="nav-link active nav-radius" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Rechercher par lieu</button>
-      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Rechercher une plante</button>
-    </div>
+    <button class="nav-link active" id="nav-home-tab">Rechercher une plante</button>
   </nav>
   <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
       <%= form_for :plant, url: plants_path, method: :get do |f| %>
-        <%= f.text_field :name, placeholder: "Nom" %>
+        <%= f.text_field :name, placeholder: " Nom" %>
         <%= f.select :plant_type, Plant.select(:plant_type).distinct.collect { |p| [ p.plant_type, p.plant_type ] }.sort_by{|i| i}, include_blank: "Catégorie" %>
-        <%= f.text_field :location, placeholder: "Ville" %>
-        <%= f.submit "Rechercher", class: "search-btn" %>
-      <% end %>
-    </div>
-    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-      <%= form_for :plant, url: plants_path, method: :get do |f| %>
-        <%= f.text_field :name, placeholder: "Nom" %>
+        <%= f.text_field :location, placeholder: " Ville" %>
         <%= f.submit "Rechercher", class: "search-btn" %>
       <% end %>
     </div>
@@ -24,6 +15,7 @@
 </div>
 <div class="container-fluid">
   <div class="row justify-content-center row-cols-auto mt-5">
+  <%= "Aucune plante ne correspond à ces critères 😟" if @plants.blank?%>
     <% @plants.each do |plant| %>
       <div class="col p-3">
         <%= link_to plant_path(plant), {class: 'text-deco'} do %>
