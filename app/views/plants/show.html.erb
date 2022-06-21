@@ -1,57 +1,79 @@
-<p class="back-icon m-3">
-  <%= link_to plants_path do %>
-    <i class="fas fa-arrow-circle-left"></i>
-  <% end %>
-</p>
-<div class="dropdown dropdown-show">
-    <button class="btn dropdown-toggle btn-add-to-list" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-      Ajouter à une liste
-    </button>
-    <% if current_user.lists.exists? %>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <% current_user.lists.each do |list| %>
-          <li><%= link_to list.name, plant_plant_lists_path(@plant.id, list_id: list.id, plant_id: @plant.id), method: :post, class: "dropdown-item" %></li>
+<div class="container ms-4">
+  <div class="row">
+    <div class="col-auto p-0">
+      <p class="back-icon m-3">
+        <%= link_to plants_path do %>
+          <i class="fas fa-arrow-circle-left"></i>
         <% end %>
-      </ul>
-    <% else %>
-
-    <% end %>
-  </div>
-<div class="container-show">
-  <div class="container-title-show">
-    <p class="title-show"><strong><%= @plant.name.upcase %></strong></p>
-  </div>
-  <div class="display-show">
-    <div class="container-subtitle-show">
-      <p class="subtitle-show"><%= @plant.scientific_name %></p>
+      </p>
     </div>
-    <div class="container-img-all-descriptions">
-      <div class="container-img-show txte-show">
-        <%= image_tag @plant.image_url, class: "img-show" %>
+    <div class="col">
+      <div class="container bg-light pt-4 shadow-container">
+        <p class="title-show"><strong><%= @plant.name.upcase %></strong></p>
+        <p class="border-bottom border-dark pb-4 m-0"><i><%= @plant.scientific_name %></i></p>
+        <div class="row">
+          <div class="col-1">
+          </div>
+          <div class="col">
+            <div class="container border-start border-dark">
+              <div class="row pt-4">
+                <div class="col">
+                  <p><%= image_tag @plant.image_url, class: "img-show" %></p>
+                </div>
+                <div class="col m-auto">
+                  <div class="dropdown dropdown-show">
+                    <button class="btn dropdown-toggle btn-add-to-list" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Ajouter à une liste
+                    </button>
+                    <% if current_user.lists.exists? %>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <% current_user.lists.each do |list| %>
+                          <li><%= link_to list.name, plant_plant_lists_path(@plant.id, list_id: list.id, plant_id: @plant.id), method: :post, class: "dropdown-item" %></li>
+                        <% end %>
+                      </ul>
+                    <% else %>
+                      <%= flash[:notice] = "Vous ne possédez aucune liste" %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col"><p><strong>Famille:</strong> <%= @plant.family %></p></div>
+                <div class="col"><p><strong>Type:</strong> <%= @plant.plant_type %></p></div>
+              </div>
+              <div class="row">
+                <% waters = @plant.water.split(',')   %>
+                <% active = [] %>
+                <% indice = 0 %>
+                <% waters.each do |water| %>
+                  <% active[indice] = water.include?('active') ? 'text-primary' : '' %>
+                  <% indice += 1 %>
+                <% end %>
+                <div class="col"><p><strong>Arrosage:</strong> <i class="<%= "fas fa-tint #{active[0]}" %>"></i> <i class="<%= "fas fa-tint #{active[1]}" %>"></i> <i class="<%= "fas fa-tint #{active[2]}" %>"></i></p></div>
+                <% suns = @plant.sun_exposure.split(',')   %>
+                <% active = [] %>
+                <% indice = 0 %>
+                <% suns.each do |sun| %>
+                  <% active[indice] = sun.include?('active') ? 'fas text-warning' : 'fas' %>
+                  <% indice += 1 %>
+                <% end %>
+                <div class="col"><p><strong>Exposition:</strong> <i class="<%= "#{active[0]} fa-sun" %>"></i> <i class="<%= "#{active[1]} fa-sun" %>"></i> <i class="<%= "#{active[2]} fa-sun" %>"></i></p></div>
+              </div>
+              <div class="row">
+                <div class="col"><p><strong>Ph du sol:</strong> <%= @plant.soil_ph %></p></div>
+                <div class="col"><p><strong>Température:</strong> <%= @plant.temperature_humidity %></p></div>
+              </div>
+              <div class="row">
+                <div class="col"><p><strong>Taille à mâturité:</strong> <%= @plant.maturity_size %></p></div>
+                <div class="col"><p><strong>Zone de rusticité:</strong> <%= @plant.hardiness_zone %></p></div>
+              </div>
+              <p><%= @plant.description %></p>
+            </div>
+          </div>
+        </div>
       </div>
-      <p class="txte-show"><strong>Type:</strong><%= @plant.plant_type %></p>
-      <p class="txte-show"><strong>Taille à mâturité :</strong><%= @plant.maturity_size %></p>
-      <p class="txte-show"><strong>Exposition:</strong><%= @plant.sun_exposure %></p>
-      <p class="txte-show"><strong>Type de sol:</strong><%= @plant.soil_type %></p>
-      <p class="txte-show"><strong>Ph du sol:<strong><%= @plant.soil_ph %></p>
-      <p class="txte-show"><strong>Floraison:</strong><%= @plant.bloom_time %></p>
-      <p class="txte-show"><strong>Granulométrie:</strong><%= @plant.hardiness_zone %></p>
-      <p class="txte-show"><strong>Origine:</strong><%= @plant.native_area %></p>
-      <p class="txte-show">Soin:<%= @plant.care %></p>
-      <p class="txte-show">Luminosité:<%= @plant.light %></p>
-      <p class="txte-show">Soil:<%= @plant.soil %></p>
-      <p class="txte-show">Arrosage:<%= @plant.water %></p>
-      <p class="txte-show">Fertilisation:<%= @plant.fertilizer %></p>
-      <p class="txte-show">En pot:<%= @plant.pot %></p>
-      <p class="txte-show">En terre:<%= @plant.open_soil %></p>
-      <p class="txte-show">Température:<%= @plant.temperature_humidity %></p>
-      <p class="txte-show"><%= @plant.description %></p>
     </div>
   </div>
-  <%# if @lists.exists?%>
-  <%# else %>
-  <%# link_to do %>
-    <%# <button class="button-green btn-show"type="button">Add to list</button> %>
-  <%# end %>
 </div>
+
 <%= render 'shared/footer' %>
