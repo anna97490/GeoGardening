@@ -26,7 +26,10 @@ require 'json'
           elsif zone == 1
             climat_zone =  (1..7).to_a
           end
-          element = {name => climate_zone}
+          element = {
+            name: name,
+            zone: climate_zone
+          }
             # if !element.values.compact.empty?
             p element
             location_hashes << element
@@ -35,7 +38,7 @@ require 'json'
 
       end
     end
-    filepath = File.expand_path(File.dirname(__FILE__) + '/climate_zones.json')
+    filepath = File.expand_path(File.dirname(__FILE__) + '/climate_z.json')
     File.open(filepath, "wb") do |file|
     file.write(JSON.generate(location_hashes))
     end
