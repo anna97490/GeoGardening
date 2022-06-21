@@ -49,7 +49,7 @@
                   <% active[indice] = water.include?('active') ? 'text-primary' : '' %>
                   <% indice += 1 %>
                 <% end %>
-                <div class="col"><p><strong>Arrosage:</strong> <i class="<%= "fas fa-tint #{active[0]}" %>"></i> <i class="<%= "fas fa-tint #{active[1]}" %>"></i> <i class="<%= "fas fa-tint #{active[2]}" %>"></i></p></div>
+                <div class="col"><p><strong>Besoins en eau:</strong> <i class="<%= "fas fa-tint #{active[0]}" %>"></i> <i class="<%= "fas fa-tint #{active[1]}" %>"></i> <i class="<%= "fas fa-tint #{active[2]}" %>"></i></p></div>
                 <% suns = @plant.sun_exposure.split(',')   %>
                 <% active = [] %>
                 <% indice = 0 %>
@@ -61,10 +61,10 @@
               </div>
               <div class="row">
                 <div class="col"><p><strong>Ph du sol:</strong> <%= @plant.soil_ph %></p></div>
-                <div class="col"><p><strong>Température:</strong> <%= @plant.temperature_humidity %></p></div>
+                <div class="col"><p><strong>Résistance au gel:</strong> <%= @plant.temperature_humidity %></p></div>
               </div>
               <div class="row">
-                <div class="col"><p><strong>Taille à mâturité:</strong> <%= @plant.maturity_size %></p></div>
+                <div class="col"><p><strong>Taille à mâturité:</strong> <%= @plant.maturity_size %>cm</p></div>
                 <div class="col"><p><strong>Zone de rusticité:</strong> <%= @plant.hardiness_zone %></p></div>
               </div>
               <p><%= @plant.description %></p>
