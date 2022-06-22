@@ -16,13 +16,14 @@
 </div>
 <div class="container-fluid">
   <p class="search-result">
-  <% if params[:plants].blank? %>
+  <% if params[:plant].present? %>
       <% if @plants.count == 1 %>
         <%= "#{@plants.count} plante trouvée" %>
       <% else %>
         <%= "#{@plants.count} plantes trouvées" %>
       <% end %>
     <% end %>
+  <% end %>
     </p>
   <div class="row justify-content-center row-cols-auto mt-2">
     <% if @plants.blank?%>
