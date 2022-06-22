@@ -6,22 +6,25 @@
     <nav class="navbar-expand-lg">
       <div class="container-elements-nav">
         <div>
-          <ul class="navbar-nav">
+          <ul class="navbar-nav p-0">
             <li class="nav-item">
               <%= link_to lists_path do %>
                 <button class="nav-link nav-link-button"type="button"><i class="fas fa-leaf"></i>Mes Jardins</button>
               <% end %>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link nav-link-button dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mon Profil</a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <% if current_user != nil %>
-                  <li><%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
-                <% else %>
-                  <li><%= link_to "Connexion", new_user_session_path, class: "dropdown-item" %></li>
+            <% if current_user != nil %>
+              <li class="ps-2 py-2 pe-1">
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fas fa-sign-out-alt"></i>
                 <% end %>
-              </ul>
-            </li>
+              </li>
+            <% else %>
+              <li class="nav-link-button m-5">
+                <%= link_to new_user_session_path do %>
+                  <i class="fas fa-sign-in-alt"></i>
+                <% end %>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>
