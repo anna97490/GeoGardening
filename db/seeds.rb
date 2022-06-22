@@ -24,13 +24,13 @@ List.create(name: 'Maison de campagne', location: 'Nice', user_id: user.id)
 
 List.create(name: 'Mon appartement', location: 'Paris', user_id: user.id)
 
-# puts "Creating locations"
+puts "Creating locations"
 
-# filepath = File.expand_path(File.dirname(__FILE__) + '/hardiness_zones.json')
-# ser_locations = File.read(filepath)
-# locations = JSON.parse(ser_locations)
-# Location.create_from_collection(locations)
+filepath = File.expand_path(File.dirname(__FILE__) + '/hardiness_zones.json')
+ser_locations = File.read(filepath)
+locations = JSON.parse(ser_locations)
+Location.create_from_collection(locations)
 
-# puts "Finished creating locations"
+puts "Finished creating locations"
 
 puts "Finished seeding"
