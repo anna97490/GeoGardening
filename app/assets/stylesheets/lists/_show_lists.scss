@@ -16,10 +16,18 @@
   display: flex;
   align-items: center;
   margin: auto;
-   margin: 0 8%;
+  margin: 0 8%;
 & P {
   font-size: 25px;
   }
+}
+
+.show-list-title {
+  margin-top: 3rem !important;
+}
+
+.content-plants {
+  margin-top: 3rem !important;
 }
 
 .card-list {
