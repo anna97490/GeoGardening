@@ -1,7 +1,5 @@
 body {
-  background-image: /*linear-gradient(rgba(0, 0, 255, 0.5),*/
-  /*rgba(255, 255, 0, 0.5)),*/
-  url("imageblancop");
+  background-image: url("imageblancop");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -24,6 +22,9 @@ h1, h2, h3, h4, h5 {
   color: #07390C;
 }
 
+h5 {
+  width: 100%;
+}
 
 button {
   color: $color-dark-green !important;
