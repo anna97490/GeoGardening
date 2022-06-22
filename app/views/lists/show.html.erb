@@ -9,13 +9,22 @@
   <div class="row row-cols-auto justify-content-center content-plants">
     <% @list.plant_lists.each do |plant_list| %>
       <div class="col p-3">
-        <%= link_to plant_path(plant_list), {class: 'text-deco'} do %>
+        <%= link_to plant_path(plant_list[:plant_id]), {class: 'text-deco'} do %>
           <div class="card card-index">
             <% plant = @list.plants.where(id: plant_list.plant_id).first %>
             <%= image_tag plant.image_url, alt: plant.name, class: "plant-image" %>
             <div class="card-body">
-              <h5 class="card-title"><strong><%= plant.name %></strong></h5>
-              <p class="card-text"><i><%= plant.scientific_name %></i></p>
+              <div class="row">
+                <h5 class="card-title"><strong><%= plant.name %></strong></h5>
+                <p class="card-text d-flex justify-content-between">
+                  <i class="color-text-scientific"><%= plant.scientific_name %></i>
+                  <p class="row-fix-card">
+                    <%= link_to plant_list_path(plant_list), method: :delete do %>
+                      <i class="fas fa-trash"></i>
+                    <% end %>
+                  </p>
+                </p>
+              </div>
             </div>
           </div>
         <% end %>
