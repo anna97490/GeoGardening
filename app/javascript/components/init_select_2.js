@@ -1,8 +1,11 @@
-import $ from 'jquery';
-import 'select2';
+// import $ from 'jquery';
+// import 'select2';
 
-const initSelect2 = () => {
-  $('.select2').select2();
-};
+// const initSelect2 = () => {
+//   $('#plant_location').select2({
+//     placeholder: "Choisir une ville",
+//     selectOnClose: true
+//   });
+// };
 
-export { initSelect2 };
+// export { initSelect2 };
