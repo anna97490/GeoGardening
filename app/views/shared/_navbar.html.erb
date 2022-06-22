@@ -6,21 +6,21 @@
     <nav class="navbar-expand-lg">
       <div class="container-elements-nav">
         <div>
-          <ul class="navbar-nav p-0">
+          <ul class="navbar-nav p-0 buttons-navbar">
             <li class="nav-item">
               <%= link_to lists_path do %>
-                <button class="nav-link nav-link-button"type="button"><i class="fas fa-leaf"></i>Mes Jardins</button>
+                <button class="nav-link nav-link-button" type="button"><i class="fas fa-leaf"></i>Mes Jardins</button>
               <% end %>
             </li>
             <% if current_user != nil %>
-              <li class="ps-2 py-2 pe-1">
-                <%= link_to destroy_user_session_path, method: :delete do %>
+              <li class="ps-2 py-2 pe-1 sigin-out">
+                <%= link_to destroy_user_session_path, class: "nav-link-button", method: :delete do %>
                   <i class="fas fa-sign-out-alt"></i>
                 <% end %>
               </li>
             <% else %>
-              <li class="nav-link-button m-5">
-                <%= link_to new_user_session_path do %>
+              <li class="sigin-out">
+                <%= link_to new_user_session_path, class: "nav-link-button" do %>
                   <i class="fas fa-sign-in-alt"></i>
                 <% end %>
               </li>

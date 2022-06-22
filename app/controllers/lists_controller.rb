@@ -13,7 +13,7 @@ class ListsController < ApplicationController
     @list.user_id = current_user.id
     if @list.save
       @list.update(location: current_user.user_location) if @list.location == ""
-      redirect_to list_path(@list)
+      redirect_to lists_path
     else
       render :new
     end

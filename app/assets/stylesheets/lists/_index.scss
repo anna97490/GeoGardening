@@ -44,15 +44,15 @@
     object-fit: cover;
     text-align: center;
     font-size: 30px;
-    color: #BACBA9;
+    color: $color-dark-green;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #36583a7d;
   }
   .fa-trash {
     font-size: 20px;
-    color: #525c48;
+    color: #687f51;
     &:hover {
-      color: #262b22;
+      color: $color-dark-green;
     }
   }
 }
@@ -75,10 +75,6 @@
 .list-card-infos {
   padding: 16px;
   width: 90%;
-}
-
-.list-card-infos a {
-  color: #6f805f;
 }
 
 .list-card-infos p {
