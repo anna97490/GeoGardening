@@ -1,3 +1,7 @@
+def default_url_options
+  { host: ENV["DOMAIN"] || "localhost:3000" }
+end
+
 class ApplicationController < ActionController::Base
   add_flash_types :info, :error, :warning
   before_action :authenticate_user!, :configure_permitted_parameters, if: :devise_controller?
