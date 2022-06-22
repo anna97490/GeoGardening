@@ -5,7 +5,6 @@ class PlantsController < ApplicationController
     @all_plants = Plant.new
     if params[:plant]
       if params[:plant][:name].blank? && params[:plant][:plant_type].blank? && params[:plant][:location].blank?
-        # Temporary change in o[:plant]der to not show all 1650 plants in index
         @plants = Plant.order(Arel.sql('RANDOM()')).take(50)
       elsif params[:plant][:name].blank? && params[:plant][:location].blank?
         @plants = Plant.where("plant_type ILIKE ?", "%#{params[:plant][:plant_type]}%").order('name ASC')
@@ -30,10 +29,11 @@ class PlantsController < ApplicationController
             @plants << plant if plant.plant_type == params[:plant][:plant_type]
           end
         elsif params[:plant][:category].blank?
-          # Fonctionnel mais non flexible
-          filtered_plants.map do |plant|
-            @plants << plant if plant.name == params[:plant][:name]
+          plants = Plant.where("name ILIKE ?", "%#{params[:plant][:name]}%").order('name ASC')
+          plants.each do |plant|
+            @plants << plant if plant.zone.first <= location.zone.last
           end
+          @plants
         end
       end
     else
