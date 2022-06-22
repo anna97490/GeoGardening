@@ -1,7 +1,3 @@
-.body-lists-index {
-  height: 100vh;
-}
-
 .button-green-lists {
   display: flex;
   margin: auto;
@@ -73,15 +69,13 @@
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-}
-
-.list-card-infos a {
-  color: #6f805f;
-}
-
-.list-card-infos p {
-  color: #6f805f;;
-  font-size: 14px;
+  & a {
+    color: $color-dark-green;
+  }
+  & p {
+    color: #6f805f;;
+    font-size: 14px;
+  }
 }
 
 .del-link a {

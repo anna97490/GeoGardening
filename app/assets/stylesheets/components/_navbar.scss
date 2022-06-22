@@ -25,6 +25,23 @@
   }
 }
 
+.buttons-navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sigin-out {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & a {
+    padding: 8% 35%;
+    font-size: 19px;
+    width: 4vw;
+  }
+}
+
 .nav-link-button {
   padding: auto;
   color: $color-dark-green !important;
