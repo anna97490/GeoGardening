@@ -5,16 +5,10 @@
 </p>
 <div class="container container-form-create">
   <%= simple_form_for [ @list ] do |f| %>
-<<<<<<< HEAD
     <%= f.input :name, label: 'Nom de la liste', class: 'input-form-create-list' %>
     <%= f.input :location, label: 'Localisation', class: 'input-form-create-list', placeholder: current_user.user_location %>
     <div class="container-btn-create">
       <%= f.submit "Confirmer", class: "button-green btn-create-list" %>
     </div>
-=======
-    <%= f.input :name, label: 'Nom de la liste' %>
-    <%= f.input :location, label: 'Localisation', class: 'field-create-list', placeholder: current_user.user_location %>
-    <%= f.submit "Confirmer", class: "button-green" %>
->>>>>>> 2e30fb98fc3b365cca3402145b0f114335fa23b3
   <% end %>
 </div>
