@@ -15,7 +15,16 @@
   </div>
 </div>
 <div class="container-fluid">
-  <div class="row justify-content-center row-cols-auto mt-5">
+  <p class="search-result">
+  <% if params[:plants].blank? %>
+      <% if @plants.count == 1 %>
+        <%= "#{@plants.count} plante trouvée" %>
+      <% else %>
+        <%= "#{@plants.count} plantes trouvées" %>
+      <% end %>
+    <% end %>
+    </p>
+  <div class="row justify-content-center row-cols-auto mt-2">
     <% if @plants.blank?%>
       <%= "Aucune plante ne correspond à ces critères 😟"  %>
     <% else %>
