@@ -19,22 +19,18 @@
 </div>
 <div class="container-fluid">
   <p class="search-result">
-  <% if params[:plant].present? %>
-    <% if @plants.count == 1 %>
-      <%= "#{@plants.count} plante trouvée" %>
-    <% else %>
-      <%= "#{@plants.count} plantes trouvées" %>
+    <% if params[:plant].present? %>
+      <% if @plants.count <= 1 %>
+        <%= "#{@plants.count} plante trouvée" %>
+      <% else %>
+        <%= "#{@plants.count} plantes trouvées" %>
+        <a href="#navbar-example2">
+          <i class="fas fa-arrow-circle-up scroll-up-button"></i>
+        </a>
+      <% end %>
     <% end %>
-  <% end %>
-    </p>
+  </p>
   <div class="row justify-content-center row-cols-auto mt-2">
-    <% if @plants.blank?%>
-      <%= "Aucune plante ne correspond à ces critères 😟"  %>
-    <% else %>
-      <a href="#navbar-example2">
-        <i class="fas fa-arrow-circle-up scroll-up-button"></i>
-      </a>
-    <% end %>
     <% @plants.each do |plant| %>
       <div class="col p-3">
         <%= link_to plant_path(plant), {class: 'text-deco'} do %>
