@@ -1,6 +1,11 @@
 // Specific CSS for your home-page
+#the-body {
+  background-image: none;
+}
+
 .body-home {
-  padding: 5% 12%;
+  padding: 3% 12% 0;
+
 }
 
 .sp-content {
@@ -15,7 +20,7 @@
   width: 90%;
   color: $color-navbar;
   font-size: 70px;
-  margin-top: 8%;
+  margin-top: 5%;
   width: 100%;
 }
 
@@ -56,10 +61,19 @@
 .container-btn-to-search {
   display: flex;
   justify-content: center;
-  margin: 6% 0 3% 0;
+  margin: 3% 0 3% 0;
 }
 
 .btn-home {
   width: 27vw !important;
   padding: 10px !important;
+}
+
+.image-home{
+  display: flex;
+  justify-content: center;
+  & img {
+    width: 50%;
+    margin-top: 2%;
+  }
 }
