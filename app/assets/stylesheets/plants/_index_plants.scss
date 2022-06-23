@@ -50,7 +50,6 @@
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.557);
-
   form {
     background-color: #bacba900 !important;
     & input {
@@ -58,6 +57,7 @@
       border: none;
       height: 30px;
       margin: 10px;
+      padding-left: 8px;
       &::placeholder {
         color: black;
       }
