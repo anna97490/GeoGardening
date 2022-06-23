@@ -7,8 +7,7 @@
       <%= form_for :plant, url: plants_path, method: :get do |f| %>
         <%= f.text_field :name, placeholder: " Nom" %>
         <%= f.select :plant_type, Plant.pluck(:plant_type).uniq.sort_by{|i| i}, include_blank: "Catégorie" %>
-        <%#= f.select :location, Location.all.select(:name).collect { |p| p.name.capitalize }, include_blank: " Ville", id: 'select2' %>
-        <%= f.text_field :location, placeholder: "Ville" %>
+        <%= f.text_field :location, placeholder: " Ville" %>
         <%= f.submit "Rechercher", class: "search-btn" %>
       <% end %>
     </div>
@@ -38,7 +37,11 @@
           <div class="card card-index">
             <%= image_tag plant.image_url, alt: plant.name, class: "plant-image" %>
             <div class="card-body">
-              <h5 class="card-title"><strong><%= plant.name %></strong></h5>
+              <% if plant.name.size > 20 %>
+                <h5 class="card-title card-title-reduce"><strong><%= plant.name %></strong></h5>
+              <% else %>
+                <h5 class="card-title"><strong><%= plant.name %></strong></h5>
+              <% end %>
               <p class="card-text"><i><%= plant.scientific_name %></i></p>
             </div>
           </div>
