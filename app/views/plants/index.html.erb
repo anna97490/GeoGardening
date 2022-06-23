@@ -17,11 +17,10 @@
 <div class="container-fluid">
   <p class="search-result">
   <% if params[:plant].present? %>
-      <% if @plants.count == 1 %>
-        <%= "#{@plants.count} plante trouvée" %>
-      <% else %>
-        <%= "#{@plants.count} plantes trouvées" %>
-      <% end %>
+    <% if @plants.count == 1 %>
+      <%= "#{@plants.count} plante trouvée" %>
+    <% else %>
+      <%= "#{@plants.count} plantes trouvées" %>
     <% end %>
   <% end %>
     </p>
