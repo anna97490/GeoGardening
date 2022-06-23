@@ -5,20 +5,18 @@
     <% end %>
   </p>
   <button class="button-green button-green-lists"><%= link_to "Créer une liste", new_list_path, method: :get %></button>
-  <div class="container-index-list">
-    <% @lists.each do |list| %>
-      <div class="list-card">
-        <i class="fas fa-light fa-seedling"></i>
-        <div class="list-card-infos">
-          <h2><%= link_to list.name, list_path(list.id) %></h2>
-          <p><%= list.location %></p>
-        </div>
-        <span class="del-link justify-content-end">
-          <%= link_to list_path(list), method: :delete do %>
-            <i class="fas fa-trash"></i>
-          <% end %>
-        </span>
+  <% @lists.each do |list| %>
+    <div class="list-card">
+      <i class="fas fa-light fa-seedling"></i>
+      <div class="list-card-infos">
+        <h2><%= link_to list.name, list_path(list.id) %></h2>
+        <p><%= list.location %></p>
       </div>
-    <% end %>
-  </div>
+      <span class="del-link justify-content-end">
+        <%= link_to list_path(list), method: :delete do %>
+          <i class="fas fa-trash"></i>
+        <% end %>
+      </span>
+    </div>
+  <% end %>
 </div>
