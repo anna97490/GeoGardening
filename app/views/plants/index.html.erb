@@ -7,7 +7,15 @@
       <%= form_for :plant, url: plants_path, method: :get do |f| %>
         <%= f.text_field :name, placeholder: " Nom" %>
         <%= f.select :plant_type, Plant.pluck(:plant_type).uniq.sort_by{|i| i}, include_blank: "Catégorie" %>
-        <%= f.text_field :location, placeholder: " Ville" %>
+        <% if params[:plant].present? %>
+          <% if params[:plant][:location].present? %>
+            <%= f.text_field :location, placeholder: " #{params[:plant][:location].capitalize}" %>
+          <% else %>
+            <%= f.text_field :location, placeholder: " Ville" %>
+          <% end %>
+        <% else %>
+          <%= f.text_field :location, placeholder: " Ville" %>
+        <% end %>
         <%= f.submit "Rechercher", class: "search-btn" %>
       <% end %>
     </div>
