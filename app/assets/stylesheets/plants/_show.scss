@@ -85,4 +85,13 @@
 
 .border-start {
   margin-bottom: 20px;
+  word-wrap: break-word;
+}
+
+.drop-show {
+  font-size: 15px !important;
+  word-wrap: break-word !important;
+  & a {
+    white-space: none !important;
+  }
 }
