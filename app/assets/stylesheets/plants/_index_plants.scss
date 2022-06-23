@@ -70,13 +70,17 @@
   font-size: 15px;
 }
 
+.card-title-reduce {
+  font-size: 111%;
+}
+
 .color-text-scientific {
   color: black;
 }
 
 .row-fix-card {
   position: absolute;
-  top: 5%;
+  top: 65%;
   left: 88%;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #323231;
