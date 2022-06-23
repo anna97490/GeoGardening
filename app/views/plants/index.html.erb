@@ -30,10 +30,6 @@
   <div class="row justify-content-center row-cols-auto mt-2">
     <% if @plants.blank?%>
       <%= "Aucune plante ne correspond à ces critères 😟"  %>
-    <% else %>
-      <a href="#navbar-example2">
-        <i class="fas fa-arrow-circle-up scroll-up-button"></i>
-      </a>
     <% end %>
     <% @plants.each do |plant| %>
       <div class="col p-3">
@@ -54,3 +50,8 @@
     <% end %>
   </div>
 </div>
+<% if @plants.present? %>
+  <a href="#navbar-example2">
+    <i class="fas fa-arrow-circle-up scroll-up-button"></i>
+  </a>
+<% end %>
