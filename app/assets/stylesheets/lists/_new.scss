@@ -1,0 +1,32 @@
+#list_name {
+  border-radius: 10px
+}
+
+#list_location {
+  border-radius: 10px
+}
+
+#new_list {
+  width: 100%;
+  padding: 2% 1%;
+}
+
+.container-form-create {
+  display: flex;
+  justify-content: center;
+  background-color: #bacba929;
+  width: 45%;
+  border-radius: 10px;
+  box-shadow: 1px 6px 30px #cfd2ce
+}
+
+.btn-create-list {
+  width: 20%;
+  padding: 1%;
+}
+
+.container-btn-create {
+  display: flex;
+  justify-content: end;
+  margin-top: 4%;
+}
