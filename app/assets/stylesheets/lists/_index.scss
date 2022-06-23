@@ -7,6 +7,7 @@
   margin: auto;
   justify-content: center;
   margin-top: 3rem !important;
+  margin-bottom: 50px;
   width: 27vw !important;
   padding: 10px !important;
 }
@@ -36,7 +37,7 @@
   transition: transform 0.5s;
   &:hover {
     transform: scale(1.01);
-    
+
   }
 }
 
@@ -90,4 +91,3 @@
   font-weight: bold;
   margin-right: 10px;
 }
-
