@@ -27,9 +27,9 @@
                         Ajouter à une liste
                       </button>
                       <% if current_user.lists.exists? %>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <ul class="dropdown-menu container-drop-show" aria-labelledby="dropdownMenuButton1">
                           <% current_user.lists.each do |list| %>
-                            <li><%= link_to list.name, plant_plant_lists_path(@plant.id, list_id: list.id, plant_id: @plant.id), method: :post, class: "dropdown-item" %></li>
+                            <li><%= link_to list.name, plant_plant_lists_path(@plant.id, list_id: list.id, plant_id: @plant.id), method: :post, class: "dropdown-item drop-show" %></li>
                           <% end %>
                         </ul>
                       <% else %>
