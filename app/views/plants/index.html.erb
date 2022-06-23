@@ -8,7 +8,7 @@
         <%= f.text_field :name, placeholder: " Nom" %>
         <%= f.select :plant_type, Plant.pluck(:plant_type).uniq.sort_by{|i| i}, include_blank: "Catégorie" %>
         <%#= f.select :location, Location.all.select(:name).collect { |p| p.name.capitalize }, include_blank: " Ville", id: 'select2' %>
-        <%= f.text_field :location, placeholder: " Ville" %>
+        <%= f.text_field :location, placeholder: "Ville" %>
         <%= f.submit "Rechercher", class: "search-btn" %>
       <% end %>
     </div>
