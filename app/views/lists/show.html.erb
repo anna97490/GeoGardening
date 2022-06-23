@@ -13,16 +13,16 @@
           <div class="card card-index">
             <% plant = @list.plants.where(id: plant_list.plant_id).first %>
             <%= image_tag plant.image_url, alt: plant.name, class: "plant-image" %>
+            <p class="row-fix-card">
+              <%= link_to plant_list_path(plant_list), method: :delete do %>
+                <i class="fas fa-trash"></i>
+              <% end %>
+            </p>
             <div class="card-body">
               <div class="row">
                 <h5 class="card-title"><strong><%= plant.name %></strong></h5>
                 <p class="card-text d-flex justify-content-between">
                   <i class="color-text-scientific"><%= plant.scientific_name %></i>
-                  <p class="row-fix-card">
-                    <%= link_to plant_list_path(plant_list), method: :delete do %>
-                      <i class="fas fa-trash"></i>
-                    <% end %>
-                  </p>
                 </p>
               </div>
             </div>
