@@ -15,25 +15,28 @@ class PlantsController < ApplicationController
         @plants = Plant.where("name ILIKE ? AND plant_type ILIKE ?", "%#{params[:plant][:name]}%", "%#{params[:plant][:plant_type]}%").order('name ASC')
       else
         location = Location.where("name ILIKE ?", "%#{params[:plant][:location]}%").first
-        @plants = []
-        filtered_plants = []
-        Plant.all.each do |plant|
-          filtered_plants << plant if plant.zone.first <= location.zone.last
-        end
         if location.nil?
           redirect_to plants_path, notice: "Malheureusement nous n'avons pas de données pour cette ville."
-        elsif params[:plant][:plant_type].blank? && params[:plant][:name].blank?
-          @plants = filtered_plants
-        elsif params[:plant][:name].blank?
-          filtered_plants.map do |plant|
-            @plants << plant if plant.plant_type == params[:plant][:plant_type]
+        else
+          @plants = []
+          filtered_plants = []
+          Plant.all.each do |plant|
+            filtered_plants << plant if plant.zone.first <= location.zone.last
           end
-        elsif params[:plant][:category].blank?
-          plants = Plant.where("name ILIKE ?", "%#{params[:plant][:name]}%").order('name ASC')
-          plants.each do |plant|
-            @plants << plant if plant.zone.first <= location.zone.last
+
+          if params[:plant][:plant_type].blank? && params[:plant][:name].blank?
+            @plants = filtered_plants
+          elsif params[:plant][:name].blank?
+            filtered_plants.map do |plant|
+              @plants << plant if plant.plant_type == params[:plant][:plant_type]
+            end
+          elsif params[:plant][:category].blank?
+            plants = Plant.where("name ILIKE ?", "%#{params[:plant][:name]}%").order('name ASC')
+            plants.each do |plant|
+              @plants << plant if plant.zone.first <= location.zone.last
+            end
+            @plants
           end
-          @plants
         end
       end
     else
